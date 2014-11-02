@@ -27,5 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="灰度"/>
+     <ImageView android:id="@+id/dstImageViewID" 
+        android:scaleType="fitCenter"  
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"  
+        android:maxWidth="240px" 
+        android:maxHeight="240px" />
+   
 
 </RelativeLayout>

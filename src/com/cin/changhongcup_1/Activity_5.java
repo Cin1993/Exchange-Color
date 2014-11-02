@@ -19,7 +19,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class Activity_5 extends Activity {
 	/** Called when the activity is first created. */
-	private Bitmap srcBitmap, dstBitmap;
+	private Bitmap srcBitmap;
 	private String pathName = "/sdcard/testimg.jpg";
 
 	private ImageView dstimage = null;
@@ -48,7 +48,6 @@ public class Activity_5 extends Activity {
 		imgHeight = srcBitmap.getHeight();
 		imgWidth = srcBitmap.getWidth();
 
-		dstBitmap = Bitmap.createBitmap(imgWidth, imgHeight, Config.ARGB_8888);
 
 		SaturationseekBar
 				.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {

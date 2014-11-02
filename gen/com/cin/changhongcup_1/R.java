@@ -33,7 +33,7 @@ public final class R {
         public static final int Brightnessseekbar=0x7f080002;
         public static final int Contrastseekbar=0x7f080003;
         public static final int Saturationseekbar=0x7f080001;
-        public static final int action_settings=0x7f08000e;
+        public static final int action_settings=0x7f08000f;
         public static final int buttonId1=0x7f080007;
         public static final int buttonId_1=0x7f080008;
         public static final int buttonId_2=0x7f080009;
@@ -45,6 +45,7 @@ public final class R {
         public static final int checkBoxId_2=0x7f08000c;
         public static final int checkBoxId_3=0x7f08000d;
         public static final int dstImageView=0x7f080000;
+        public static final int dstImageViewID=0x7f08000e;
     }
     public static final class layout {
         public static final int fifth=0x7f030000;

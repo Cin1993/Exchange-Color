@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/photo37"
+    android:orientation="vertical" >
+     
+	     <ImageView android:id="@+id/dstImageViewID" android:scaleType="fitCenter"
+	         android:layout_gravity="center_horizontal|top"
+	        android:layout_width="match_parent" 
+	        android:layout_height="wrap_content"  
+	        android:maxWidth="240dp" 
+	        android:maxHeight="240dp" />
 
-    <TextView
-       android:layout_width="fill_parent"
-       android:layout_height="fill_parent"
-       android:background="@drawable/photo37"/>
-    
-    <CheckBox
-        android:id="@+id/checkBoxId_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="明亮度" />
-    
-    <CheckBox 
-        android:id="@+id/checkBoxId_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:text="对比度"/>
-    
-    <CheckBox 
-        android:id="@+id/checkBoxId_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="灰度"/>
-     <ImageView android:id="@+id/dstImageViewID" 
-        android:scaleType="fitCenter"  
-        android:layout_width="fill_parent" 
-        android:layout_height="wrap_content"  
-        android:maxWidth="240px" 
-        android:maxHeight="240px" />
-   
+	     <RadioGroup
+	         android:id="@+id/radioGroupID_1"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_gravity="center"
+	         android:orientation="horizontal" >
 
-</RelativeLayout>
+	         <RadioButton 
+	             android:id="@+id/radioButtonID_0"
+	             android:text="无效果"/>
+	         
+	         <RadioButton
+	             android:id="@+id/radioButtonID_1"
+	             android:text="怀旧" />
+
+	         <RadioButton
+	             android:id="@+id/radioButtonID_2"
+	             android:text="LOMO" />
+	         <RadioButton 
+	             android:id="@+id/radioButtonID_3"
+	             android:text="暖意"/>
+	     </RadioGroup>
+
+</LinearLayout>

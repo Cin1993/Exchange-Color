@@ -11,8 +11,8 @@
         android:scaleType="fitCenter"  
         android:layout_width="fill_parent" 
         android:layout_height="wrap_content"  
-        android:maxWidth="240px" 
-        android:maxHeight="240px" />
+        android:maxWidth="240dp" 
+        android:maxHeight="240dp" />
 
     <LinearLayout
         android:layout_width="fill_parent"

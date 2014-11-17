@@ -20,7 +20,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 public class Activity_5 extends Activity {
 	/** Called when the activity is first created. */
 	private Bitmap srcBitmap;
-	private String pathName = "/sdcard/testimg.jpg";
+	private String pathName = "/sdcard/p003.jpg";
 
 	private ImageView dstimage = null;
 	private SeekBar SaturationseekBar = null;
@@ -129,17 +129,13 @@ public class Activity_5 extends Activity {
 						Canvas canvas = new Canvas(bmp);
 						// 在Canvas上绘制一个已经存在的Bitmap。这样，dstBitmap就和srcBitmap一摸一样了
 						canvas.drawBitmap(srcBitmap, 0, 0, paint);
-
 						dstimage.setImageBitmap(bmp);
 					}
 
 					public void onStartTrackingTouch(SeekBar arg0) {
-						// TODO Auto-generated method stub
-
 					}
 
 					public void onStopTrackingTouch(SeekBar seekBar) {
-						// TODO Auto-generated method stub
 					}
 				});
 	}

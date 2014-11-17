@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/photo37"
     android:orientation="vertical" >
-     
-	     <ImageView android:id="@+id/dstImageViewID" android:scaleType="fitCenter"
-	         android:layout_gravity="center_horizontal|top"
-	        android:layout_width="match_parent" 
-	        android:layout_height="wrap_content"  
-	        android:maxWidth="240dp" 
-	        android:maxHeight="240dp" />
-
-	     <RadioGroup
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+          <RadioGroup
 	         android:id="@+id/radioGroupID_1"
 	         android:layout_width="wrap_content"
 	         android:layout_height="wrap_content"
@@ -34,5 +30,36 @@
 	             android:id="@+id/radioButtonID_3"
 	             android:text="暖意"/>
 	     </RadioGroup>
+	     <LinearLayout 
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:orientation="vertical">
+	        
+	         <ImageView android:id="@+id/dstImageViewID" android:scaleType="fitCenter"
+	        android:layout_gravity="center_horizontal|top"
+	        android:layout_width="wrap_content" 
+	        android:layout_height="wrap_content"  
+	        android:maxWidth="240dp" 
+	        android:maxHeight="240dp" />
+	     </LinearLayout>
+     
+	     
+	  </LinearLayout>
 
-</LinearLayout>
+	  <LinearLayout
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_alignParentBottom="true"
+	      android:layout_alignParentLeft="true"
+	      android:orientation="vertical" >
+	  </LinearLayout>
+
+	  <Button
+	      android:id="@+id/shareButton"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_alignParentBottom="true"
+	      android:layout_alignParentRight="true"
+	      android:text="一键分享" />
+
+</RelativeLayout>

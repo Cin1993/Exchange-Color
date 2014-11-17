@@ -8,21 +8,26 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.widget.CompoundButton;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.onekeyshare.OnekeyShare;
 
 public class Activity_3 extends Activity{
 	
-	    private String pathName = "/sdcard/testimg.jpg";
+	    private String pathName = "/sdcard/p005.jpg";
 		private Bitmap srcBitmap;
 		private ImageView dstimage;
 		private RadioGroup radioGroup;
-		private RadioButton radioButton_0;
-		private RadioButton radioButton_1;
-		private RadioButton radioButton_2;
-		private RadioButton radioButton_3;
+		private RadioButton radioButton_0;							//无效果Button
+		private RadioButton radioButton_1;							//怀旧Button
+		private RadioButton radioButton_2;							//LOMOButton
+		private RadioButton radioButton_3;							//暖意Button
+		private Button sharebutton;									//分享Button
 		
 		//怀旧效果
 		public Bitmap oldRemeber(Bitmap bmp)
@@ -189,6 +194,37 @@ public class Activity_3 extends Activity{
 		        bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
 		        return bitmap;
 		    }
+		 
+		 
+		 //一键分享
+		 private void showShare() {
+		        ShareSDK.initSDK(this);
+		        OnekeyShare oks = new OnekeyShare();
+		        //关闭sso授权
+		        oks.disableSSOWhenAuthorize();
+		        
+		        // 分享时Notification的图标和文字
+		        oks.setNotification(R.drawable.ic_launcher, getString(R.string.app_name));
+		        // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
+		        oks.setTitle(getString(R.string.share));
+		        // titleUrl是标题的网络链接，仅在人人网和QQ空间使用
+		        oks.setTitleUrl("http://sharesdk.cn");
+		        // text是分享文本，所有平台都需要这个字段
+		        oks.setText("我是分享文本");
+		        // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+		        oks.setImagePath("/sdcard/test.jpg");
+		        // url仅在微信（包括好友和朋友圈）中使用
+		        oks.setUrl("http://sharesdk.cn");
+		        // comment是我对这条分享的评论，仅在人人网和QQ空间使用
+		        oks.setComment("我是测试评论文本");
+		        // site是分享此内容的网站名称，仅在QQ空间使用
+		        oks.setSite(getString(R.string.app_name));
+		        // siteUrl是分享此内容的网站地址，仅在QQ空间使用
+		        oks.setSiteUrl("http://sharesdk.cn");
+
+		        // 启动分享GUI
+		        oks.show(this);
+		   }
 
 
 
@@ -204,7 +240,11 @@ public class Activity_3 extends Activity{
 		    radioButton_1 = (RadioButton)findViewById(R.id.radioButtonID_1);
 		    radioButton_2 = (RadioButton)findViewById(R.id.radioButtonID_2);
 		    radioButton_3 = (RadioButton)findViewById(R.id.radioButtonID_3);
-			radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+		   //分享Button监听器
+		    sharebutton = (Button)findViewById(R.id.shareButton);
+		    sharebutton.setOnClickListener(sharelistener);
+			//radioButton监听器
+		    radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 				
 				@Override
 				public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -227,8 +267,14 @@ public class Activity_3 extends Activity{
 				}
 			});
 			}
-
 		
+		private OnClickListener sharelistener = new OnClickListener()
+		{
+			@Override
+			public void onClick(View v) {
+				showShare();
+			}
+		};
 }
 
 
